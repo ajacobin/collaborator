@@ -1,0 +1,7 @@
+Student List
+<br />
+{% for object in object_list %}
+  {% if object %}
+    <a href="{% url 'student-detail' pk=object.id %}"> {{ object.fname }} {{ object.lname }}</a> <br />
+  {% endif %}
+{% endfor %}

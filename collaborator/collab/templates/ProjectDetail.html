@@ -1,0 +1,19 @@
+<h1>Project Detail</h1>
+<br />
+<h2>{{ object.name }}</h2><br />
+{{ object.description }}<br />
+{% if object.students %}
+  <h3>Students Assigned to Project</h3>
+  {% for student in object.students.all %}
+    {{ student.fname }} {{ student.lname }} <br />
+  {% endfor %}
+{% endif %}
+
+<br />
+{% if form %}
+<form action="{% url 'project-assign' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" />
+</form>
+{% endif %}

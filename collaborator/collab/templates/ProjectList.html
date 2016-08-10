@@ -1,0 +1,7 @@
+Project Detail
+<br />
+{% for object in object_list %}
+  {% if object %}
+    <a href="{% url 'project-detail' pk=object.id %}"> {{ object.name }}</a> <br />
+  {% endif %}
+{% endfor %}
